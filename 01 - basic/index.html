@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>A Guide to the Phaser State Manager</title>
+        
+    </head>
+    <body>
+        <script src="phaser.js" type="text/javascript"></script>
+        <script src="StateA.js" type="text/javascript"></script>
+        <script src="StateB.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+        
+        //create global 'game' object which is an instance of Phaser.Game
+        var game = new Phaser.Game(800, 600);
+
+        //adds two new states to the state manager the first parameter is a string which refers to the state created, the second is the object's code as the state
+        //they key and the state's object do not have to share the same name
+        game.state.add('StateA', MyGame.StateA);
+        game.state.add('StateB', MyGame.StateB);
+
+        game.state.start('StateA');
+
+        </script>
+
+    </body>
+</html>
